@@ -1,0 +1,37 @@
+Agente de agendamento | extrator: local-deterministico
+Data de referência: 2026-09-14 | agenda em http://127.0.0.1:59519
+Comandos: /estado  /reset  /sair
+
+você> oi, queria marcar uma conversa
+agente> Para qual dia você quer marcar?
+
+você> pra dia 29/09 de manha
+agente> No dia 2026-09-29, de manhã, tenho estes horários livres: 09:00, 10:00. Qual deles fica melhor?
+
+você> 10h
+agente> O horário 10:00 do dia 2026-09-29 está livre. Em nome de quem eu registro?
+
+você> Rafael Monteiro
+agente> O horário 10:00 do dia 2026-09-29 está livre. Qual e-mail eu uso para enviar a confirmação?
+
+você> rafael.monteiro@exemplo.com
+agente> O horário 10:00 do dia 2026-09-29 está livre. Qual o assunto da conversa, em uma linha?
+
+você> organizacao do atendimento
+agente> Reunião confirmada.
+        Protocolo: AG-2026-0001
+        Quando: 2026-09-29 às 10:00
+        Em nome de: Rafael Monteiro
+        Confirmação enviada para: rafael.monteiro@exemplo.com
+        Assunto: organizacao do atendimento
+
+você> /estado
+  intenção: agendar_reuniao
+  data = 2026-09-29 (origem: '29/09')
+  hora = 10:00 (origem: '10h')
+  nome = Rafael Monteiro (origem: 'Rafael Monteiro')
+  email = rafael.monteiro@exemplo.com (origem: 'rafael.monteiro@exemplo.com')
+  assunto = organizacao do atendimento (origem: 'organizacao do atendimento')
+
+você> /sair
+até mais.
