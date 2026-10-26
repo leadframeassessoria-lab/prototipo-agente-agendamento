@@ -1,0 +1,9 @@
+{
+  "scope": [
+    "src/crm_demo.py"
+  ],
+  "syntax": "passed",
+  "dangerous_calls": [],
+  "network_imports": [],
+  "findings": []
+}

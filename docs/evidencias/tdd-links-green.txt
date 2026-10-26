@@ -1,0 +1,6 @@
+test_links_locais_resolvem_da_pasta_do_documento (test_documentacao.LinksDocumentacaoTest.test_links_locais_resolvem_da_pasta_do_documento) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+OK

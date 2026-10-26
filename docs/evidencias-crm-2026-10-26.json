@@ -1,0 +1,13 @@
+{
+  "consultado_em": "2026-10-26",
+  "natureza": "Snapshot sanitizado de configuração observada; não é export de clientes nem métricas comerciais",
+  "ferramentas_exercitadas": ["crm_list_pipelines", "crm_list_stages", "crm_list_event_types", "crm_get_queue_status"],
+  "pipelines": [
+    {"id_demo": "DEMO-P1", "nome": "Consultoria e Assessoria", "etapas": ["Novo contato", "Em triagem", "Qualificando", "Sem resposta (frio)", "Pronto para humano", "Agendado", "Orçamento em avaliação", "Proposta (humana)", "Ganho", "Perdido"]},
+    {"id_demo": "DEMO-P2", "nome": "Chalés LSF", "padrao_observado": true, "etapas": ["Novo contato", "Em triagem", "Qualificando", "Sem resposta (frio)", "Pronto para humano", "Agendado", "Orçamento em avaliação", "Proposta (humana)", "Ganho", "Perdido"]},
+    {"id_demo": "DEMO-P3", "nome": "Clientes (Pós-venda)", "etapas": ["Cliente novo", "Em andamento", "Ocorrência aberta", "Aguardando cliente", "Entregue / em garantia", "Concluído", "Encerrado"]}
+  ],
+  "evento": {"slug": "reuniao", "nome": "Reunião", "duracao_minutos": 30, "onde": "Google Meet", "precisa_confirmacao": false},
+  "limites": ["IDs DEMO não são UUIDs do CRM", "Fila e números operacionais não reproduzidos", "Nenhum contato/conversa lido", "Nenhuma escrita na produção", "Google Meet, e-mail, notificação e agenda reais não testados", "Ferramenta disponível não equivale a integração end-to-end verificada"],
+  "demonstracao": {"dados": "Inteiramente fictícios", "relogio_fixo": "2026-11-02", "persistencia": "Memória local por processo; reinício/reset descarta somente fixtures da demo", "integracao_producao": false}
+}

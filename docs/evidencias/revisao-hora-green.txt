@@ -1,0 +1,21 @@
+test_correcao_data_nao_preenche_assunto_pendente (test_crm_regressoes.RegressoesCRM.test_correcao_data_nao_preenche_assunto_pendente) ... ok
+test_correcao_hora_impossivel_invalida_horario_anterior (test_crm_regressoes.RegressoesCRM.test_correcao_hora_impossivel_invalida_horario_anterior) ... ok
+test_correcao_hora_impossivel_as_minutos (test_crm_regressoes.RegressoesCRM.test_correcao_hora_impossivel_as_minutos) ... ok
+test_optout_nao_mascara_deteccao_sensivel_nos_dois_caminhos (test_crm_regressoes.RegressoesCRM.test_optout_nao_mascara_deteccao_sensivel_nos_dois_caminhos) ... ok
+test_reserva_direta_encerra_coleta_anterior (test_crm_regressoes.RegressoesCRM.test_reserva_direta_encerra_coleta_anterior) ... ok
+
+----------------------------------------------------------------------
+
+Ran 5 tests in 0.051s
+
+OK
+
+=== Correção específica: "às 15:99" ===
+
+Problema: Regex antiga `\b(\d{1,2})\s*(?::|h)\s*(\d{2})?\b|\bas\s+(\d{1,2})\b`
+         não capturava minutos em "às 15:99" - casava apenas "as 15"
+
+Correção: Regex nova `\b(?:as\s+)?(\d{1,2})(?::|\s*h)?(\d{2})?\b`
+          detecta minutos > 59 e remove o campo hora
+
+Status: HORA REMOVIDA, NENHUMA RESERVA CRIADA, ESPERADO = 'hora' ✓

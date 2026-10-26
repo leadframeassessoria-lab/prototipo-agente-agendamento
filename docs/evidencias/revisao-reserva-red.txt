@@ -1,0 +1,16 @@
+test_optout_nao_mascara_deteccao_sensivel_nos_dois_caminhos (test_crm_regressoes.RegressoesCRM.test_optout_nao_mascara_deteccao_sensivel_nos_dois_caminhos) ... ok
+test_reserva_direta_encerra_coleta_anterior (test_crm_regressoes.RegressoesCRM.test_reserva_direta_encerra_coleta_anterior) ... FAIL
+
+======================================================================
+FAIL: test_reserva_direta_encerra_coleta_anterior (test_crm_regressoes.RegressoesCRM.test_reserva_direta_encerra_coleta_anterior)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/worktrees/proex-crm-20261026/tests/test_crm_regressoes.py", line 36, in test_reserva_direta_encerra_coleta_anterior
+    self.assertFalse(lead['agendando'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.005s
+
+FAILED (failures=1)

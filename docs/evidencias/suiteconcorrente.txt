@@ -1,0 +1,54 @@
+test_concorrencia_uma_unica_reserva (test_crm_demo.CRMTests.test_concorrencia_uma_unica_reserva) ... ok
+test_conflito_de_reserva_sem_duplicar (test_crm_demo.CRMTests.test_conflito_de_reserva_sem_duplicar) ... ok
+test_dado_sensivel_nao_e_persistido (test_crm_demo.CRMTests.test_dado_sensivel_nao_e_persistido) ... ok
+test_data_invalida_e_hora_invalida_nao_reservam (test_crm_demo.CRMTests.test_data_invalida_e_hora_invalida_nao_reservam) ... ok
+test_estado_devolvido_nao_permite_alteracao_indireta (test_crm_demo.CRMTests.test_estado_devolvido_nao_permite_alteracao_indireta) ... ok
+test_handoff_pausa_automacao_sem_prometer_humano_online (test_crm_demo.CRMTests.test_handoff_pausa_automacao_sem_prometer_humano_online) ... ok
+test_humano_e_preco_viram_handoff_simulado (test_crm_demo.CRMTests.test_humano_e_preco_viram_handoff_simulado) ... ok
+test_identificador_inexistente_nao_e_inventado (test_crm_demo.CRMTests.test_identificador_inexistente_nao_e_inventado) ... ok
+test_informal_e_periodo_parcial_nao_inventa_hora (test_crm_demo.CRMTests.test_informal_e_periodo_parcial_nao_inventa_hora) ... ok
+test_injecao_nao_executa_acao (test_crm_demo.CRMTests.test_injecao_nao_executa_acao) ... ok
+test_lacunas_uma_pergunta_por_vez_e_resposta_seca (test_crm_demo.CRMTests.test_lacunas_uma_pergunta_por_vez_e_resposta_seca) ... ok
+test_mensagem_completa_reserva_somente_local (test_crm_demo.CRMTests.test_mensagem_completa_reserva_somente_local) ... ok
+test_mensagem_vazia_e_grande_recusadas (test_crm_demo.CRMTests.test_mensagem_vazia_e_grande_recusadas) ... ok
+test_movimento_e_leitura_posterior (test_crm_demo.CRMTests.test_movimento_e_leitura_posterior) ... ok
+test_movimento_entre_funis_e_recusado (test_crm_demo.CRMTests.test_movimento_entre_funis_e_recusado) ... ok
+test_movimento_invalido_nao_muda_estado (test_crm_demo.CRMTests.test_movimento_invalido_nao_muda_estado) ... ok
+test_ocupado_oferece_apenas_disponibilidade_local (test_crm_demo.CRMTests.test_ocupado_oferece_apenas_disponibilidade_local) ... ok
+test_optout_bloqueia_mensagem_e_reserva (test_crm_demo.CRMTests.test_optout_bloqueia_mensagem_e_reserva) ... ok
+test_relogio_injetavel (test_crm_demo.CRMTests.test_relogio_injetavel) ... ok
+test_reserva_rejeita_campos_invalidos (test_crm_demo.CRMTests.test_reserva_rejeita_campos_invalidos) ... ok
+test_reset_e_instancias_isoladas (test_crm_demo.CRMTests.test_reset_e_instancias_isoladas) ... ok
+test_snapshot_observado_e_identificadores_ficticios (test_crm_demo.CRMTests.test_snapshot_observado_e_identificadores_ficticios) ... ok
+test_status_le_o_registro (test_crm_demo.CRMTests.test_status_le_o_registro) ... ok
+test_correcao_data_nao_preenche_assunto_pendente (test_crm_regressoes.RegressoesCRM.test_correcao_data_nao_preenche_assunto_pendente) ... ok
+test_correcao_hora_impossivel_as_minutos (test_crm_regressoes.RegressoesCRM.test_correcao_hora_impossivel_as_minutos)
+Teste específico para o caso 'às 15:99' identificado na revisão independente. ... ok
+test_correcao_hora_impossivel_invalida_horario_anterior (test_crm_regressoes.RegressoesCRM.test_correcao_hora_impossivel_invalida_horario_anterior) ... ok
+test_optout_nao_mascara_deteccao_sensivel_nos_dois_caminhos (test_crm_regressoes.RegressoesCRM.test_optout_nao_mascara_deteccao_sensivel_nos_dois_caminhos) ... ok
+test_reserva_direta_encerra_coleta_anterior (test_crm_regressoes.RegressoesCRM.test_reserva_direta_encerra_coleta_anterior) ... ok
+test_links_locais_resolvem_da_pasta_do_documento (test_documentacao.LinksDocumentacaoTest.test_links_locais_resolvem_da_pasta_do_documento) ... ok
+test_caminhos_fora_allowlist_nao_vazam_arquivo (test_web_demo.WebDemoTests.test_caminhos_fora_allowlist_nao_vazam_arquivo) ... ok
+test_campos_ausentes_tipos_e_desconhecidos (test_web_demo.WebDemoTests.test_campos_ausentes_tipos_e_desconhecidos) ... ok
+test_concorrencia_http_nao_duplica_reserva (test_web_demo.WebDemoTests.test_concorrencia_http_nao_duplica_reserva) ... ok
+test_content_type_rotas_metodos (test_web_demo.WebDemoTests.test_content_type_rotas_metodos) ... ok
+test_disponibilidade_real_do_backend (test_web_demo.WebDemoTests.test_disponibilidade_real_do_backend) ... ok
+test_estado_fabrica_loopback_e_cabecalhos (test_web_demo.WebDemoTests.test_estado_fabrica_loopback_e_cabecalhos) ... ok
+test_estaticos_allowlist_e_sem_dependencia_externa (test_web_demo.WebDemoTests.test_estaticos_allowlist_e_sem_dependencia_externa) ... ok
+test_framing_http_e_limite_16kb (test_web_demo.WebDemoTests.test_framing_http_e_limite_16kb) ... ok
+test_get_sem_origin_permitido_post_sem_origin_bloqueado (test_web_demo.WebDemoTests.test_get_sem_origin_permitido_post_sem_origin_bloqueado) ... ok
+test_handoff_e_optout_pausam_reserva (test_web_demo.WebDemoTests.test_handoff_e_optout_pausam_reserva) ... ok
+test_host_e_origin_somente_loopback_na_porta_efetiva (test_web_demo.WebDemoTests.test_host_e_origin_somente_loopback_na_porta_efetiva) ... ok
+test_identificador_inexistente (test_web_demo.WebDemoTests.test_identificador_inexistente) ... ok
+test_instancias_isoladas (test_web_demo.WebDemoTests.test_instancias_isoladas) ... ok
+test_json_invalido_escalar_duplicado_e_unicode_invalido (test_web_demo.WebDemoTests.test_json_invalido_escalar_duplicado_e_unicode_invalido) ... ok
+test_mensagem_e_reserva_completa (test_web_demo.WebDemoTests.test_mensagem_e_reserva_completa) ... ok
+test_mover_devolve_resultado_e_estado_lido_apos_escrita (test_web_demo.WebDemoTests.test_mover_devolve_resultado_e_estado_lido_apos_escrita) ... ok
+test_portas_invalidas_nao_abrem_servidor (test_web_demo.WebDemoTests.test_portas_invalidas_nao_abrem_servidor) ... ok
+test_reserva_conflito_e_reset (test_web_demo.WebDemoTests.test_reserva_conflito_e_reset) ... ok
+test_roteiro_cli_deterministico_com_tres_casos_e_trilha (test_web_demo.WebDemoTests.test_roteiro_cli_deterministico_com_tres_casos_e_trilha) ... ok
+
+----------------------------------------------------------------------
+Ran 48 tests in 8.786s
+
+OK

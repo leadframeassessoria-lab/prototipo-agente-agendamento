@@ -1,0 +1,22 @@
+TDD WEB — RED real, antes de criar demo_crm.py e web/*
+Diretório: /root/worktrees/proex-crm-20261026
+Comando: PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -p test_web_demo.py -v
+Exit code: 1
+
+Trecho literal da saída (as 19 falhas têm a mesma causa, servidor inexistente):
+
+test_estado_fabrica_loopback_e_cabecalhos (test_web_demo.WebDemoTests.test_estado_fabrica_loopback_e_cabecalhos) ... FAIL
+
+======================================================================
+FAIL: test_estado_fabrica_loopback_e_cabecalhos (test_web_demo.WebDemoTests.test_estado_fabrica_loopback_e_cabecalhos)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/worktrees/proex-crm-20261026/tests/test_web_demo.py", line 21, in setUp
+    self.assertIsNotNone(SPEC, 'Falta o servidor local demo_crm.py (funcionalidade ainda não implementada)')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : Falta o servidor local demo_crm.py (funcionalidade ainda não implementada)
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.005s
+
+FAILED (failures=19)

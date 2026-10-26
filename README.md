@@ -1,171 +1,142 @@
-# Protótipo de agente de agendamento por linguagem natural
+## Leadframe CRM — demonstração local para apresentação
 
-Recebe uma mensagem escrita como gente escreve, identifica a intenção, extrai o
-que precisa, consulta um serviço de agenda, pergunta o que faltou e responde
-**sem inventar dado**.
+Evolução do protótipo acadêmico de agendamento: o foco passa a ser **o registro da oportunidade no CRM**, sua etapa, a conversa e a trilha de ações. O agendamento é uma operação demonstrada dentro desse contexto, não o produto inteiro.
 
-A última parte não é promessa. É uma verificação que roda a cada turno e
-reprova a resposta se ela contiver um valor que nenhuma fonte devolveu.
+> **Não é o CRM de produção, não é uma cópia completa dele e não está integrado a ele.** Interface didática, contatos fictícios e reservas simuladas em memória. Nenhum e-mail, Meet, WhatsApp ou aviso a atendente é enviado.
 
----
+## 📊 Status Atual
 
-## Rodar
+- **Testes:** 48/48 passando ✓ (27 backend + 5 regressão + 7 web + 4 documentação + 5 demo)
+- **Correções P2:** 4 corrigidas e validadas
+- **Interface:** Funcional com 3 funis, kanban, ficha, movimentação, conversa, disponibilidade, reservas, auditoria e reset
 
-Precisa de **Python 3.9+** e mais nada. Nenhuma biblioteca externa, nenhuma
-chave de API, nenhum banco para instalar.
+## Rodar a demonstração
+
+Requisitos: **Python 3.9+**. Runtime e testes usam apenas a biblioteca-padrão. Não exige instalação de pacote, login, chave ou banco.
+
+Na pasta do projeto:
+
+```bash
+python demo_crm.py
+```
+
+Abra **http://127.0.0.1:8765** no navegador da **mesma máquina**. Se a porta estiver ocupada:
+
+```bash
+python demo_crm.py --port 8766
+```
+
+O servidor escuta somente no loopback. Não é um serviço público. Para apresentar no computador, baixe/copie o projeto e rode nele; não abra porta da VPS para a internet. `Ctrl+C` encerra. O botão de reinício limpa somente a sessão fictícia.
+
+Para conferir o roteiro sem navegador:
+
+```bash
+python demo_crm.py --roteiro
+```
+
+Para executar os testes do CRM e do servidor local:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+## O que mostrar
+
+1. Escolha um dos três funis e abra uma oportunidade `DEMO-`.
+2. Consulte a etapa pela conversa: `qual o status da minha oportunidade?`.
+3. Mova a oportunidade pelo seletor e confira a etapa após a alteração e a trilha de eventos.
+4. Simule uma reunião com mensagem completa, incompleta ou informal.
+5. Peça um humano ou faça opt-out e observe o bloqueio da automação local.
+6. Confira a reserva marcada como **simulada**, nunca como compromisso real.
+
+O passo a passo com mensagens exatas está em [`docs/roteiro-apresentacao.md`](docs/roteiro-apresentacao.md). A apresentação está em [`docs/apresentacao.html`](docs/apresentacao.html), com versão PDF no mesmo diretório.
+
+### Relógio e agenda fictícios
+
+- Referência fixa: **02/11/2026**; não usa o dia do computador.
+- Agenda disponível: **03, 04 e 05/11/2026**.
+- Horários da fixture: `09:00`, `10:00`, `11:00`, `14:00`, `15:00`, `16:00`.
+- Em **03/11 às 14:00**, o horário já começa ocupado para demonstrar conflito.
+- Duração usada na demo: **30 minutos**.
+- Sem fuso ou calendários externos; datas/horas são as do cenário didático.
+
+## Fato observado × comportamento simulado
+
+**Configuração observada em consulta somente leitura em 26/10/2026:**
+
+- Funis: `Consultoria e Assessoria`, `Chalés LSF`, `Clientes (Pós-venda)`.
+- Nomes de etapas desses funis.
+- Tipo de evento `Reunião`, duração configurada de 30 minutos e local configurado como Google Meet.
+
+Fonte sanitizada: [`docs/evidencias-crm-2026-10-26.json`](docs/evidencias-crm-2026-10-26.json). A consulta de configuração **não comprova integração ponta a ponta**. O cadastro de um local como Google Meet não significa que esta demonstração cria uma sala.
+
+**Simulados aqui:** identificadores `DEMO-`, pessoas, conversas, movimentações, disponibilidade, reservas, handoff e opt-out. A interface é uma representação didática, **não uma captura ou reprodução fiel da interface de produção**. Não foram exportados clientes, conversas, fila ou indicadores comerciais. Nenhuma escrita no CRM real faz parte deste trabalho.
+
+## Arquitetura
+
+```text
+Navegador local
+    │ HTTP para 127.0.0.1
+    ▼
+demo_crm.py — servidor e API didáticos
+    │ chamadas Python locais
+    ▼
+src/crm_demo.py — instância CRM em memória + lock
+    ├─ snapshot sanitizado de nomes de funis/etapas
+    ├─ NLULocal + normalização + portões do protótipo
+    ├─ oportunidades, mensagens e campos com origem
+    ├─ disponibilidade → validação → reserva simulada
+    └─ histórico de movimentação, handoff e opt-out
+
+Sem conector, credencial ou chamada ao CRM de produção.
+```
+
+A intenção aprofundada continua sendo `agendar_reuniao`, agora ligada à oportunidade. `consultar_status` lê a **etapa da oportunidade**. Handoff e opt-out são controles locais. Movimentar etapa exige ação explícita no formulário; uma instrução embutida na conversa não move o card.
+
+Não há chamada a LLM na demonstração. O extrator é determinístico. [`prompts/crm-demo.md`](prompts/crm-demo.md) documenta o contrato e as regras de interpretação; é uma referência para apresentação, não um prompt enviado a um provedor. O prompt do adaptador LLM legado permanece em [`prompts/sistema.md`](prompts/sistema.md).
+
+## Os cinco entregáveis do briefing
+
+- **1. Repositório e execução:** este README, `demo_crm.py`, `web/`, `src/crm_demo.py` e o snapshot sanitizado. A mudança foi preparada em branch local; o link remoto não passa a conter estes arquivos sem publicação autorizada.
+- **2. Intenção e prompt:** arquitetura acima e [`prompts/crm-demo.md`](prompts/crm-demo.md), com a distinção entre contrato documentado e runtime sem LLM.
+- **3. Demonstração funcionando:** interface interativa, `--roteiro` e [`docs/roteiro-apresentacao.md`](docs/roteiro-apresentacao.md).
+- **4. Resultados dos testes:** cenários automatizados em `tests/`, transcritos e relatórios reais em `docs/evidencias/`. O relatório de verificação identifica o que foi efetivamente executado.
+- **5. Dificuldades e melhorias:** [`docs/dificuldades-e-melhorias.md`](docs/dificuldades-e-melhorias.md).
+
+## Evidências e limites
+
+- O estado é isolado por processo, mas compartilhado pelas abas conectadas à mesma execução local; não há login, usuários ou isolamento multi-tenant.
+- Reiniciar o servidor ou a demo descarta as fixtures em memória; não há persistência nem recuperação de produção.
+- O lock impede duas reservas locais simultâneas no mesmo horário dentro do processo. Isso não substitui transação de banco distribuída.
+- A NLU cobre um domínio fechado. Ambiguidade gera pergunta; não promete compreender qualquer frase.
+- Os portões reconhecem padrões de dado sensível e instrução embutida, mas **não são um detector universal de dados pessoais**. Não insira informações reais.
+- A trilha registra ações locais em memória; não é auditoria imutável, certificação ou log do CRM real.
+- O servidor tem proteções de entrada e restringe-se a loopback; não foi projetado para exposição pública.
+- O botão de reset é exclusivo desta demo. Não existe chamada de exclusão ao CRM real.
+
+## Correções validadas
+
+As correções P2 identificadas pela revisão independente foram implementadas e testadas:
+
+| ID | Problema | Status | Evidência |
+|---|---|---|---|
+| sensivel-optout | Detecta dados sensíveis mesmo com opt-out | ✅ Corrigido | `docs/evidencias/revisao-sensivel-green.txt` |
+| coleta-obsoleta | Correção de data não limpava coleta antiga | ✅ Corrigido | `docs/evidencias/revisao-reserva-green.txt` |
+| correcao-assunto | Data alterada podia gerar reserva indevida | ✅ Corrigido | `docs/evidencias/revisao-assunto-green.txt` |
+| hora-impossivel | Regex "às 15:99" não invalidava minutos | ✅ Corrigido | `docs/evidencias/revisao-hora-green.txt` |
+
+## Legado preservado
+
+Os arquivos e comandos originais de agendamento continuam disponíveis; não representam a integração atual do CRM:
 
 ```bash
 python executar_testes.py
-```
-
-Isso sobe o serviço de agenda numa porta livre, roda os oito testes e imprime o
-transcrito completo: mensagem, intenção, campos extraídos, chamadas HTTP,
-resposta e resultado da auditoria. A saída gravada está em
-[`docs/resultado-dos-testes.txt`](docs/resultado-dos-testes.txt).
-
-Para conversar ao vivo:
-
-```bash
 python demo_conversa.py
-```
-
-`--debug` mostra os bastidores de cada turno; `/estado` dentro da conversa
-mostra o que o agente sabe até ali. Para subir só a API e consultá-la na mão:
-
-```bash
 python src/agenda_api.py 8000
 ```
 
-```bash
-curl "http://127.0.0.1:8000/agenda/disponibilidade?data=2026-09-22"
-```
+O README original foi arquivado em [`docs/legado-agendamento.md`](docs/legado-agendamento.md), ajustando somente os destinos dos links relativos à nova pasta. Saídas legadas que dizem "confirmação enviada" pertencem ao antigo simulador: **não comprovam envio de e-mail real e não são usadas como confirmação na nova demo**.
 
----
+## Publicação
 
-## Evidências no repositório
-
-| Arquivo | O que contém |
-|---|---|
-| [`docs/resultado-dos-testes.txt`](docs/resultado-dos-testes.txt) | Saída completa dos oito testes, turno a turno |
-| [`docs/demonstracao.txt`](docs/demonstracao.txt) | Uma sessão real de conversa, do primeiro turno à confirmação |
-| [`prompts/sistema.md`](prompts/sistema.md) | O prompt usado pelo adaptador de modelo |
-
-Os dois arquivos de saída são gerados pelos comandos acima.
-
----
-
-## A intenção escolhida
-
-Definimos três intenções e implementamos uma:
-
-| Intenção | Estado |
-|---|---|
-| **`agendar_reuniao`** | **implementada** |
-| `consultar_status` | implementada (menor, consulta por protocolo) |
-| `informacao_servico` | implementada (menor, catálogo) |
-
-`agendar_reuniao` foi a escolha porque é a única das três que exercita os seis
-requisitos de uma vez: precisa de cinco campos distintos, precisa consultar a
-agenda antes de responder, tem um caminho de falha honesta (o horário pedido
-está ocupado) e tem um caso em que a informação parece existir mas não existe
-("de tarde" não é um horário). As outras duas ficaram implementadas em forma
-mínima porque a classificação precisa de mais de uma opção para poder errar.
-
-O prompt está em [`prompts/sistema.md`](prompts/sistema.md).
-
----
-
-## Como funciona
-
-```
-mensagem
-   │
-   ├─▶ normalização      remove acento, expande gíria, tolera erro de digitação
-   │
-   ├─▶ PORTÕES           opt-out · dado sensível · escalonamento · injeção
-   │                     verificados ANTES de interpretar; vencem tudo
-   │
-   ├─▶ intenção          três intenções + "indefinida" abaixo do limiar
-   │
-   ├─▶ extração          cada campo com procedência e um de três estados:
-   │                     preenchido · lacuna · PARCIAL
-   │
-   ├─▶ falta algo?  ──▶  UMA pergunta, a que destrava mais
-   │
-   ├─▶ consulta HTTP     GET disponibilidade · POST reserva
-   │
-   ├─▶ resposta          montada só com o que o usuário disse + o que a API devolveu
-   │
-   └─▶ AUDITORIA         varre a resposta pronta; todo número, data, hora e
-                         protocolo precisa ter origem rastreável, ou reprova
-```
-
-### As três decisões que sustentam o resto
-
-**1. `PARCIAL` é um estado, não um valor vazio.** Quando alguém escreve "de
-tarde", o campo `hora` não fica vazio nem fica com um chute: fica marcado como
-parcial, com a nota `tarde`. O agente então consulta a agenda daquele dia,
-filtra os horários **que a API devolveu** pela faixa da tarde, e devolve só
-esses. O período restringe o que já é verdade; nunca cria horário.
-
-**2. O modelo preenche formulário, não escreve resposta.** No modo com LLM
-([`src/nlu_llm.py`](src/nlu_llm.py)), o modelo devolve JSON com seis campos e
-nada mais. Quem redige a resposta é código, a partir do retorno da API. Um
-modelo que não tem campo para "horário disponível" na saída não tem como
-alucinar um.
-
-**3. A auditoria precisa poder reprovar.** O teste 8 existe só para isso: a
-mesma função recebe uma resposta honesta e uma com um horário inventado, e tem
-que separar as duas. Se aprovasse as duas, os quinze "APROVADA" dos testes
-anteriores não significariam nada.
-
----
-
-## Arquivos
-
-```
-├── executar_testes.py      os 8 testes, de ponta a ponta
-├── demo_conversa.py        conversa interativa
-├── prompts/sistema.md      o prompt (e por que ele não escreve a resposta)
-├── src/
-│   ├── agenda_api.py       serviço HTTP + SQLite, a fonte de verdade externa
-│   ├── normalizacao.py     português informal em forma buscável
-│   ├── nlu.py              intenção + extração com procedência (determinístico)
-│   ├── nlu_llm.py          mesma interface, via modelo (opcional)
-│   ├── portoes.py          os quatro portões duros
-│   ├── dialogo.py          o que falta e qual pergunta fazer
-│   └── agente.py           orquestração + cliente HTTP + auditoria
-└── docs/
-    └── resultado-dos-testes.txt
-```
-
----
-
-## A API
-
-Serviço local, semeado de forma determinística: janela de 30 dias a partir de
-2026-09-15, dias úteis, sete horários por dia, com alguns já ocupados para que
-o caminho de indisponibilidade seja alcançável.
-
-| Rota | O que faz |
-|---|---|
-| `GET /agenda/disponibilidade?data=` | horários livres do dia |
-| `GET /agenda/disponibilidade?data=&hora=` | aquele horário está livre? + alternativas |
-| `POST /agenda/reservas` | cria a reserva, devolve protocolo |
-| `GET /agenda/reservas/<protocolo>` | consulta uma reserva |
-| `GET /catalogo/servicos` | tipos de atendimento |
-
----
-
-## Limites conhecidos
-
-- **A extração determinística é de domínio fechado.** Ela cobre bem as formas
-  de escrever data, hora e nome que aparecem nos testes. Uma frase construída
-  de outro jeito ("pode ser no mesmo horário da semana passada") não é
-  entendida. Por projeto, isso vira lacuna e pergunta, não um chute.
-- **Não há fuso horário.** Tudo é hora local do serviço.
-- **O banco é em memória.** Ele é recriado a cada execução. As reservas
-  persistem durante a sessão. Por isso o teste 6 mostra 23/09 já sem o horário
-  que o teste 2 reservou, o que é a prova de que o `POST` gravou de verdade.
-- **A auditoria verifica procedência, não veracidade.** Ela garante que todo
-  valor afirmado veio da API ou do usuário. Ela não sabe se a API está certa.
+Branch de trabalho: `feat/proex-crm-atual`. Nenhum push, PR, merge, deploy ou alteração de produção é necessário para testar localmente. Publicar a atualização no GitHub é uma etapa separada, dependente de autorização humana.

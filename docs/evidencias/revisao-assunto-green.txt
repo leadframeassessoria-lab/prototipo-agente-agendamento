@@ -1,0 +1,8 @@
+test_correcao_data_nao_preenche_assunto_pendente (test_crm_regressoes.RegressoesCRM.test_correcao_data_nao_preenche_assunto_pendente) ... ok
+test_optout_nao_mascara_deteccao_sensivel_nos_dois_caminhos (test_crm_regressoes.RegressoesCRM.test_optout_nao_mascara_deteccao_sensivel_nos_dois_caminhos) ... ok
+test_reserva_direta_encerra_coleta_anterior (test_crm_regressoes.RegressoesCRM.test_reserva_direta_encerra_coleta_anterior) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.020s
+
+OK

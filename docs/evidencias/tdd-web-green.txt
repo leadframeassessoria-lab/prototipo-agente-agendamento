@@ -1,0 +1,24 @@
+test_caminhos_fora_allowlist_nao_vazam_arquivo (tests.test_web_demo.WebDemoTests.test_caminhos_fora_allowlist_nao_vazam_arquivo) ... ok
+test_campos_ausentes_tipos_e_desconhecidos (tests.test_web_demo.WebDemoTests.test_campos_ausentes_tipos_e_desconhecidos) ... ok
+test_concorrencia_http_nao_duplica_reserva (tests.test_web_demo.WebDemoTests.test_concorrencia_http_nao_duplica_reserva) ... ok
+test_content_type_rotas_metodos (tests.test_web_demo.WebDemoTests.test_content_type_rotas_metodos) ... ok
+test_disponibilidade_real_do_backend (tests.test_web_demo.WebDemoTests.test_disponibilidade_real_do_backend) ... ok
+test_estado_fabrica_loopback_e_cabecalhos (tests.test_web_demo.WebDemoTests.test_estado_fabrica_loopback_e_cabecalhos) ... ok
+test_estaticos_allowlist_e_sem_dependencia_externa (tests.test_web_demo.WebDemoTests.test_estaticos_allowlist_e_sem_dependencia_externa) ... ok
+test_framing_http_e_limite_16kb (tests.test_web_demo.WebDemoTests.test_framing_http_e_limite_16kb) ... ok
+test_get_sem_origin_permitido_post_sem_origin_bloqueado (tests.test_web_demo.WebDemoTests.test_get_sem_origin_permitido_post_sem_origin_bloqueado) ... ok
+test_handoff_e_optout_pausam_reserva (tests.test_web_demo.WebDemoTests.test_handoff_e_optout_pausam_reserva) ... ok
+test_host_e_origin_somente_loopback_na_porta_efetiva (tests.test_web_demo.WebDemoTests.test_host_e_origin_somente_loopback_na_porta_efetiva) ... ok
+test_identificador_inexistente (tests.test_web_demo.WebDemoTests.test_identificador_inexistente) ... ok
+test_instancias_isoladas (tests.test_web_demo.WebDemoTests.test_instancias_isoladas) ... ok
+test_json_invalido_escalar_duplicado_e_unicode_invalido (tests.test_web_demo.WebDemoTests.test_json_invalido_escalar_duplicado_e_unicode_invalido) ... ok
+test_mensagem_e_reserva_completa (tests.test_web_demo.WebDemoTests.test_mensagem_e_reserva_completa) ... ok
+test_mover_devolve_resultado_e_estado_lido_apos_escrita (tests.test_web_demo.WebDemoTests.test_mover_devolve_resultado_e_estado_lido_apos_escrita) ... ok
+test_portas_invalidas_nao_abrem_servidor (tests.test_web_demo.WebDemoTests.test_portas_invalidas_nao_abrem_servidor) ... ok
+test_reserva_conflito_e_reset (tests.test_web_demo.WebDemoTests.test_reserva_conflito_e_reset) ... ok
+test_roteiro_cli_deterministico_com_tres_casos_e_trilha (tests.test_web_demo.WebDemoTests.test_roteiro_cli_deterministico_com_tres_casos_e_trilha) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 8.628s
+
+OK

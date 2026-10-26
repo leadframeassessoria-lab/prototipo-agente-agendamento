@@ -1,0 +1,24 @@
+PRIMEIRA EXECUÇÃO — testes antes da implementação
+test_crm_demo (unittest.loader._FailedTest.test_crm_demo) ... ERROR
+
+======================================================================
+ERROR: test_crm_demo (unittest.loader._FailedTest.test_crm_demo)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_crm_demo
+Traceback (most recent call last):
+  File "/root/.hermes/tools/python-3.14.7+20260901-linux-x64/lib/python3.14/unittest/loader.py", line 433, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/root/.hermes/tools/python-3.14.7+20260901-linux-x64/lib/python3.14/unittest/loader.py", line 374, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "/root/worktrees/proex-crm-20261026/tests/test_crm_demo.py", line 9, in <module>
+    from crm_demo import CRM
+ModuleNotFoundError: No module named 'crm_demo'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=1)
+
+EXIT=1

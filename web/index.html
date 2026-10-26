@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leadframe CRM — demonstração local</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="demo-banner">Demonstração local • Sem conexão com o CRM real • Use somente dados fictícios</div>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Navegação">
+      <div class="brand">Leadframe CRM</div>
+      <span class="local-tag">AMBIENTE LOCAL</span>
+      <nav><a href="#oportunidades">Oportunidades</a><a href="#agenda">Agenda simulada</a><a href="#historico">Trilha de ações</a></nav>
+      <p>representação didática, não captura da interface de produção</p>
+      <button id="reset" type="button" disabled>Reiniciar demo</button>
+    </aside>
+    <main>
+      <header class="page-header">
+        <div><p class="eyebrow">OPERAÇÃO COMERCIAL / DEMO</p><h1>Em que etapa está cada oportunidade?</h1><p id="reference" class="muted">Carregando estado local…</p></div>
+        <label class="pipeline-control">Funil<select id="pipeline" disabled aria-controls="board"></select></label>
+      </header>
+      <p id="feedback" role="status" aria-live="polite" aria-atomic="true">Carregando demonstração…</p>
+      <section id="oportunidades" aria-labelledby="board-title">
+        <div class="section-heading"><h2 id="board-title">Oportunidades por etapa</h2><span class="muted">Selecione um card para abrir a ficha</span></div>
+        <div id="board" class="board" role="region" tabindex="0" aria-label="Kanban com rolagem horizontal"></div>
+      </section>
+      <div class="detail-grid">
+        <section class="panel" aria-labelledby="detail-title">
+          <div class="section-heading"><h2 id="detail-title">Ficha da oportunidade</h2><span id="lead-id" class="mono"></span></div>
+          <h3 id="lead-name">Selecione uma oportunidade</h3>
+          <p id="lead-status" class="muted"></p>
+          <dl id="fields" class="fields"></dl>
+          <form id="move-form" class="move-form">
+            <label>Etapa no funil atual<select id="stage" required disabled></select></label>
+            <button type="submit" disabled>Mover oportunidade</button>
+          </form>
+          <p class="hint">Movimentação manual, somente neste estado local. Não transfere entre funis.</p>
+        </section>
+        <section class="panel conversation-panel" aria-labelledby="conversation-title">
+          <div class="section-heading"><h2 id="conversation-title">Conversa de demonstração</h2><span class="local-tag">SIMULAÇÃO</span></div>
+          <div id="conversation" class="conversation" role="log" aria-live="polite" aria-relevant="additions text"></div>
+          <div class="quick-actions" aria-label="Exemplos de mensagens">
+            <button type="button" data-example="status" disabled>Consultar etapa</button><button type="button" data-example="complete" disabled>Exemplo completo</button><button type="button" data-example="human" disabled>Pedir humano</button><button type="button" data-example="optout" disabled>Opt-out</button>
+          </div>
+          <form id="message-form">
+            <label for="message">Mensagem fictícia</label>
+            <textarea id="message" required maxlength="2000" rows="3" placeholder="Quero simular uma reunião…" disabled></textarea>
+            <div class="form-footer"><span class="hint">Até 2.000 caracteres. Nenhuma mensagem externa é enviada.</span><button class="primary" type="submit" disabled>Enviar na demo</button></div>
+          </form>
+        </section>
+      </div>
+      <section id="agenda" class="panel" aria-labelledby="schedule-title">
+        <div class="section-heading"><h2 id="schedule-title">Agenda e reservas simuladas</h2><span class="local-tag">30 MIN / FICTÍCIO</span></div>
+        <p class="muted">Agenda fixa de 03 a 05/11/2026. Nenhum e-mail, Meet ou aviso a humano é enviado.</p>
+        <form id="reserve-form" class="reserve-form">
+          <label>Nome fictício<input id="reserve-name" name="nome" required minlength="2" maxlength="80" disabled></label>
+          <label>E-mail fictício<input id="reserve-email" name="email" type="email" placeholder="demo@example.com" required maxlength="254" disabled></label>
+          <label>Dia da demo<select id="reserve-date" name="data" required disabled></select></label>
+          <label>Horário disponível<select id="reserve-time" name="hora" required disabled></select></label>
+          <label class="subject-field">Assunto<input id="reserve-subject" name="assunto" required minlength="3" maxlength="120" placeholder="Atendimento digital" disabled></label>
+          <button class="primary" id="reserve-submit" type="submit" disabled>Registrar reserva SIMULADA</button>
+        </form>
+        <p id="availability" class="hint" aria-live="polite"></p>
+        <h3>Reservas desta sessão</h3>
+        <div class="table-scroll"><table><caption class="sr-only">Reservas fictícias da sessão local</caption><thead><tr><th>ID</th><th>Oportunidade</th><th>Dia / hora</th><th>Assunto</th><th>Estado</th></tr></thead><tbody id="reservations"></tbody></table></div>
+      </section>
+      <section id="historico" class="panel" aria-labelledby="audit-title">
+        <div class="section-heading"><h2 id="audit-title">Trilha auditável da sessão</h2><span class="muted">Sequência local, sem timestamps inventados</span></div>
+        <div class="table-scroll"><table><caption class="sr-only">Ações registradas pelo backend da demo</caption><thead><tr><th>Seq.</th><th>Ação</th><th>Oportunidade</th><th>Detalhe</th></tr></thead><tbody id="audit"></tbody></table></div>
+      </section>
+      <footer>Dados e IDs fictícios • Estado em memória • Reiniciar o servidor descarta a sessão</footer>
+    </main>
+  </div>
+</body>
+</html>

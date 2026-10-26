@@ -1,0 +1,17 @@
+test_correcao_data_nao_preenche_assunto_pendente (test_crm_regressoes.RegressoesCRM.test_correcao_data_nao_preenche_assunto_pendente) ... FAIL
+test_optout_nao_mascara_deteccao_sensivel_nos_dois_caminhos (test_crm_regressoes.RegressoesCRM.test_optout_nao_mascara_deteccao_sensivel_nos_dois_caminhos) ... ok
+test_reserva_direta_encerra_coleta_anterior (test_crm_regressoes.RegressoesCRM.test_reserva_direta_encerra_coleta_anterior) ... ok
+
+======================================================================
+FAIL: test_correcao_data_nao_preenche_assunto_pendente (test_crm_regressoes.RegressoesCRM.test_correcao_data_nao_preenche_assunto_pendente)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/worktrees/proex-crm-20261026/tests/test_crm_regressoes.py", line 54, in test_correcao_data_nao_preenche_assunto_pendente
+    self.assertNotIn('assunto', lead['campos'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'assunto' unexpectedly found in {'data': '2026-11-04', 'hora': '15:00', 'nome': 'Pessoa Demo', 'email': 'demo@example.com', 'assunto': 'na verdade dia 04/11'}
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.020s
+
+FAILED (failures=1)

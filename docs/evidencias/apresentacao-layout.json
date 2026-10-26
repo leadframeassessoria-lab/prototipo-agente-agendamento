@@ -1,0 +1,62 @@
+{
+  "modo": "print",
+  "pages": [
+    {
+      "page": 1,
+      "height": 628,
+      "scroll": 628,
+      "contentBottom": 439.6875,
+      "footerTop": 591.171875
+    },
+    {
+      "page": 2,
+      "height": 628,
+      "scroll": 628,
+      "contentBottom": 524.09375,
+      "footerTop": 591.171875
+    },
+    {
+      "page": 3,
+      "height": 628,
+      "scroll": 628,
+      "contentBottom": 454.296875,
+      "footerTop": 591.171875
+    },
+    {
+      "page": 4,
+      "height": 628,
+      "scroll": 628,
+      "contentBottom": 522.84375,
+      "footerTop": 591.171875
+    },
+    {
+      "page": 5,
+      "height": 628,
+      "scroll": 628,
+      "contentBottom": 530.84375,
+      "footerTop": 591.171875
+    },
+    {
+      "page": 6,
+      "height": 628,
+      "scroll": 628,
+      "contentBottom": 482.6875,
+      "footerTop": 591.171875
+    },
+    {
+      "page": 7,
+      "height": 628,
+      "scroll": 628,
+      "contentBottom": 449.34375,
+      "footerTop": 591.171875
+    },
+    {
+      "page": 8,
+      "height": 628,
+      "scroll": 628,
+      "contentBottom": 556.59375,
+      "footerTop": 591.171875
+    }
+  ],
+  "all_passed": true
+}

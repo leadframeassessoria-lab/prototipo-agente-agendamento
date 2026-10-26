@@ -1,0 +1,15 @@
+test_optout_nao_mascara_deteccao_sensivel_nos_dois_caminhos (test_crm_regressoes.RegressoesCRM.test_optout_nao_mascara_deteccao_sensivel_nos_dois_caminhos) ... FAIL
+
+======================================================================
+FAIL: test_optout_nao_mascara_deteccao_sensivel_nos_dois_caminhos (test_crm_regressoes.RegressoesCRM.test_optout_nao_mascara_deteccao_sensivel_nos_dois_caminhos)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/worktrees/proex-crm-20261026/tests/test_crm_regressoes.py", line 19, in test_optout_nao_mascara_deteccao_sensivel_nos_dois_caminhos
+    self.assertNotIn(marcador, json.dumps(crm.estado(), ensure_ascii=False))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'MARCADOR-FICTICIO-NAO-RETER' unexpectedly found in '{"demo": true, "referencia": "2026-11-02", "pipelines": [{"id": "DEMO-P1", "nome": "Consultoria e Assessoria", "etapas": ["Novo contato", "Em triagem", "Qualificando", "Sem resposta (frio)", "Pronto para humano", "Agendado", "Orçamento em avaliação", "Proposta (humana)", "Ganho", "Perdido"]}, {"id": "DEMO-P2", "nome": "Chalés LSF", "etapas": ["Novo contato", "Em triagem", "Qualificando", "Sem resposta (frio)", "Pronto para humano", "Agendado", "Orçamento em avaliação", "Proposta (humana)", "Ganho", "Perdido"]}, {"id": "DEMO-P3", "nome": "Clientes (Pós-venda)", "etapas": ["Cliente novo", "Em andamento", "Ocorrência aberta", "Aguardando cliente", "Entregue / em garantia", "Concluído", "Encerrado"]}], "evento": {"slug": "reuniao", "nome": "Reunião", "duracao_minutos": 30, "onde": "Google Meet", "precisa_confirmacao": false}, "oportunidades": [{"id": "DEMO-001", "nome": "Pessoa Demo A", "pipeline_id": "DEMO-P1", "etapa": "Novo contato", "opt_out": true, "handoff": false, "campos": {}, "fontes": {}, "conversa": [{"papel": "pessoa", "texto": "não quero mais receber mensagens; minha senha: MARCADOR-FICTICIO-NAO-RETER"}, {"papel": "assistente", "texto": "Contato encerrado nesta demonstração; novas ações automáticas estão bloqueadas."}], "agendando": false, "esperado": null, "periodo": null}, {"id": "DEMO-002", "nome": "Pessoa Demo B", "pipeline_id": "DEMO-P2", "etapa": "Qualificando", "opt_out": false, "handoff": false, "campos": {}, "fontes": {}, "conversa": [], "agendando": false, "esperado": null, "periodo": null}, {"id": "DEMO-003", "nome": "Pessoa Demo C", "pipeline_id": "DEMO-P3", "etapa": "Ocorrência aberta", "opt_out": false, "handoff": false, "campos": {}, "fontes": {}, "conversa": [], "agendando": false, "esperado": null, "periodo": null}], "reservas": [], "eventos": [{"sequencia": 1, "acao": "opt_out", "lead_id": "DEMO-001", "detalhe": {"simulado": true}}], "dias_disponiveis": ["2026-11-03", "2026-11-04", "2026-11-05"]}'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+FAILED (failures=1)

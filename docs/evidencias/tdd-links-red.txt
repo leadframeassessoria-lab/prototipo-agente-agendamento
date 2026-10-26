@@ -1,0 +1,66 @@
+test_links_locais_resolvem_da_pasta_do_documento (test_documentacao.LinksDocumentacaoTest.test_links_locais_resolvem_da_pasta_do_documento) ... 
+  test_links_locais_resolvem_da_pasta_do_documento (test_documentacao.LinksDocumentacaoTest.test_links_locais_resolvem_da_pasta_do_documento) (documento='docs/legado-agendamento.md', link='docs/resultado-dos-testes.txt') ... FAIL
+  test_links_locais_resolvem_da_pasta_do_documento (test_documentacao.LinksDocumentacaoTest.test_links_locais_resolvem_da_pasta_do_documento) (documento='docs/legado-agendamento.md', link='docs/resultado-dos-testes.txt') ... FAIL
+  test_links_locais_resolvem_da_pasta_do_documento (test_documentacao.LinksDocumentacaoTest.test_links_locais_resolvem_da_pasta_do_documento) (documento='docs/legado-agendamento.md', link='docs/demonstracao.txt') ... FAIL
+  test_links_locais_resolvem_da_pasta_do_documento (test_documentacao.LinksDocumentacaoTest.test_links_locais_resolvem_da_pasta_do_documento) (documento='docs/legado-agendamento.md', link='prompts/sistema.md') ... FAIL
+  test_links_locais_resolvem_da_pasta_do_documento (test_documentacao.LinksDocumentacaoTest.test_links_locais_resolvem_da_pasta_do_documento) (documento='docs/legado-agendamento.md', link='prompts/sistema.md') ... FAIL
+  test_links_locais_resolvem_da_pasta_do_documento (test_documentacao.LinksDocumentacaoTest.test_links_locais_resolvem_da_pasta_do_documento) (documento='docs/legado-agendamento.md', link='src/nlu_llm.py') ... FAIL
+
+======================================================================
+FAIL: test_links_locais_resolvem_da_pasta_do_documento (test_documentacao.LinksDocumentacaoTest.test_links_locais_resolvem_da_pasta_do_documento) (documento='docs/legado-agendamento.md', link='docs/resultado-dos-testes.txt')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/worktrees/proex-crm-20261026/tests/test_documentacao.py", line 28, in test_links_locais_resolvem_da_pasta_do_documento
+    self.assertTrue(destino.is_file(), 'Link relativo quebrado: ' + link)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : Link relativo quebrado: docs/resultado-dos-testes.txt
+
+======================================================================
+FAIL: test_links_locais_resolvem_da_pasta_do_documento (test_documentacao.LinksDocumentacaoTest.test_links_locais_resolvem_da_pasta_do_documento) (documento='docs/legado-agendamento.md', link='docs/resultado-dos-testes.txt')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/worktrees/proex-crm-20261026/tests/test_documentacao.py", line 28, in test_links_locais_resolvem_da_pasta_do_documento
+    self.assertTrue(destino.is_file(), 'Link relativo quebrado: ' + link)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : Link relativo quebrado: docs/resultado-dos-testes.txt
+
+======================================================================
+FAIL: test_links_locais_resolvem_da_pasta_do_documento (test_documentacao.LinksDocumentacaoTest.test_links_locais_resolvem_da_pasta_do_documento) (documento='docs/legado-agendamento.md', link='docs/demonstracao.txt')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/worktrees/proex-crm-20261026/tests/test_documentacao.py", line 28, in test_links_locais_resolvem_da_pasta_do_documento
+    self.assertTrue(destino.is_file(), 'Link relativo quebrado: ' + link)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : Link relativo quebrado: docs/demonstracao.txt
+
+======================================================================
+FAIL: test_links_locais_resolvem_da_pasta_do_documento (test_documentacao.LinksDocumentacaoTest.test_links_locais_resolvem_da_pasta_do_documento) (documento='docs/legado-agendamento.md', link='prompts/sistema.md')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/worktrees/proex-crm-20261026/tests/test_documentacao.py", line 28, in test_links_locais_resolvem_da_pasta_do_documento
+    self.assertTrue(destino.is_file(), 'Link relativo quebrado: ' + link)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : Link relativo quebrado: prompts/sistema.md
+
+======================================================================
+FAIL: test_links_locais_resolvem_da_pasta_do_documento (test_documentacao.LinksDocumentacaoTest.test_links_locais_resolvem_da_pasta_do_documento) (documento='docs/legado-agendamento.md', link='prompts/sistema.md')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/worktrees/proex-crm-20261026/tests/test_documentacao.py", line 28, in test_links_locais_resolvem_da_pasta_do_documento
+    self.assertTrue(destino.is_file(), 'Link relativo quebrado: ' + link)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : Link relativo quebrado: prompts/sistema.md
+
+======================================================================
+FAIL: test_links_locais_resolvem_da_pasta_do_documento (test_documentacao.LinksDocumentacaoTest.test_links_locais_resolvem_da_pasta_do_documento) (documento='docs/legado-agendamento.md', link='src/nlu_llm.py')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/worktrees/proex-crm-20261026/tests/test_documentacao.py", line 28, in test_links_locais_resolvem_da_pasta_do_documento
+    self.assertTrue(destino.is_file(), 'Link relativo quebrado: ' + link)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : Link relativo quebrado: src/nlu_llm.py
+
+----------------------------------------------------------------------
+Ran 1 test in 0.003s
+
+FAILED (failures=6)

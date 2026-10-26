@@ -1,0 +1,109 @@
+{
+  "demo": true,
+  "referencia": "2026-11-02",
+  "pipelines": [
+    {
+      "id": "DEMO-P1",
+      "nome": "Consultoria e Assessoria",
+      "etapas": [
+        "Novo contato",
+        "Em triagem",
+        "Qualificando",
+        "Sem resposta (frio)",
+        "Pronto para humano",
+        "Agendado",
+        "Orçamento em avaliação",
+        "Proposta (humana)",
+        "Ganho",
+        "Perdido"
+      ]
+    },
+    {
+      "id": "DEMO-P2",
+      "nome": "Chalés LSF",
+      "etapas": [
+        "Novo contato",
+        "Em triagem",
+        "Qualificando",
+        "Sem resposta (frio)",
+        "Pronto para humano",
+        "Agendado",
+        "Orçamento em avaliação",
+        "Proposta (humana)",
+        "Ganho",
+        "Perdido"
+      ]
+    },
+    {
+      "id": "DEMO-P3",
+      "nome": "Clientes (Pós-venda)",
+      "etapas": [
+        "Cliente novo",
+        "Em andamento",
+        "Ocorrência aberta",
+        "Aguardando cliente",
+        "Entregue / em garantia",
+        "Concluído",
+        "Encerrado"
+      ]
+    }
+  ],
+  "evento": {
+    "slug": "reuniao",
+    "nome": "Reunião",
+    "duracao_minutos": 30,
+    "onde": "Google Meet",
+    "precisa_confirmacao": false
+  },
+  "oportunidades": [
+    {
+      "id": "DEMO-001",
+      "nome": "Pessoa Demo A",
+      "pipeline_id": "DEMO-P1",
+      "etapa": "Novo contato",
+      "opt_out": false,
+      "handoff": false,
+      "campos": {},
+      "fontes": {},
+      "conversa": [],
+      "agendando": false,
+      "esperado": null,
+      "periodo": null
+    },
+    {
+      "id": "DEMO-002",
+      "nome": "Pessoa Demo B",
+      "pipeline_id": "DEMO-P2",
+      "etapa": "Qualificando",
+      "opt_out": false,
+      "handoff": false,
+      "campos": {},
+      "fontes": {},
+      "conversa": [],
+      "agendando": false,
+      "esperado": null,
+      "periodo": null
+    },
+    {
+      "id": "DEMO-003",
+      "nome": "Pessoa Demo C",
+      "pipeline_id": "DEMO-P3",
+      "etapa": "Ocorrência aberta",
+      "opt_out": false,
+      "handoff": false,
+      "campos": {},
+      "fontes": {},
+      "conversa": [],
+      "agendando": false,
+      "esperado": null,
+      "periodo": null
+    }
+  ],
+  "reservas": [],
+  "eventos": [],
+  "dias_disponiveis": [
+    "2026-11-03",
+    "2026-11-04",
+    "2026-11-05"
+  ]
+}

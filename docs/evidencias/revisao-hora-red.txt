@@ -1,0 +1,19 @@
+test_correcao_data_nao_preenche_assunto_pendente (test_crm_regressoes.RegressoesCRM.test_correcao_data_nao_preenche_assunto_pendente) ... ok
+test_correcao_hora_impossivel_invalida_horario_anterior (test_crm_regressoes.RegressoesCRM.test_correcao_hora_impossivel_invalida_horario_anterior) ... 
+  test_correcao_hora_impossivel_invalida_horario_anterior (test_crm_regressoes.RegressoesCRM.test_correcao_hora_impossivel_invalida_horario_anterior) (correcao='na verdade às 25') ... FAIL
+test_optout_nao_mascara_deteccao_sensivel_nos_dois_caminhos (test_crm_regressoes.RegressoesCRM.test_optout_nao_mascara_deteccao_sensivel_nos_dois_caminhos) ... ok
+test_reserva_direta_encerra_coleta_anterior (test_crm_regressoes.RegressoesCRM.test_reserva_direta_encerra_coleta_anterior) ... ok
+
+======================================================================
+FAIL: test_correcao_hora_impossivel_invalida_horario_anterior (test_crm_regressoes.RegressoesCRM.test_correcao_hora_impossivel_invalida_horario_anterior) (correcao='na verdade às 25')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/worktrees/proex-crm-20261026/tests/test_crm_regressoes.py", line 69, in test_correcao_hora_impossivel_invalida_horario_anterior
+    self.assertNotIn('hora', crm.consultar('DEMO-001')['campos'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'hora' unexpectedly found in {'data': '2026-11-03', 'hora': '15:00', 'nome': 'Pessoa Demo'}
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.047s
+
+FAILED (failures=1)

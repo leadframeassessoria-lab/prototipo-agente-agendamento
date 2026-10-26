@@ -1,0 +1,654 @@
+{
+  "demo": true,
+  "aviso": "Reservas SIMULADAS; nenhum Meet, e-mail ou aviso a humano enviado.",
+  "casos": [
+    {
+      "nome": "completa",
+      "lead_id": "DEMO-001",
+      "passos": [
+        {
+          "texto": "Sou Pessoa Demo A, quero marcar uma reunião dia 03/11 às 15h sobre atendimento. Meu email é a@example.com",
+          "resultado": {
+            "resposta": "Reserva simulada DEMO-R001 registrada para 2026-11-03 às 15:00 (30 minutos). Nenhum e-mail, Meet ou aviso a humano foi enviado.",
+            "intencao": "agendar_reuniao",
+            "acao": "reserva_simulada",
+            "campos": {
+              "data": "2026-11-03",
+              "hora": "15:00",
+              "nome": "Pessoa Demo",
+              "email": "a@example.com",
+              "assunto": "atendimento"
+            },
+            "faltantes": []
+          }
+        }
+      ]
+    },
+    {
+      "nome": "incompleta",
+      "lead_id": "DEMO-002",
+      "passos": [
+        {
+          "texto": "Quero agendar uma reunião",
+          "resultado": {
+            "resposta": "Para qual dia: 03, 04 ou 05/11/2026?",
+            "intencao": "agendar_reuniao",
+            "acao": null,
+            "campos": {},
+            "faltantes": [
+              "data",
+              "hora",
+              "nome",
+              "email",
+              "assunto"
+            ]
+          }
+        },
+        {
+          "texto": "03/11",
+          "resultado": {
+            "resposta": "Na agenda simulada estão livres 09:00, 10:00, 11:00, 16:00; qual horário você prefere?",
+            "intencao": "agendar_reuniao",
+            "acao": null,
+            "campos": {
+              "data": "2026-11-03"
+            },
+            "faltantes": [
+              "hora",
+              "nome",
+              "email",
+              "assunto"
+            ]
+          }
+        },
+        {
+          "texto": "10h",
+          "resultado": {
+            "resposta": "Em qual nome fictício eu registro?",
+            "intencao": "agendar_reuniao",
+            "acao": null,
+            "campos": {
+              "data": "2026-11-03",
+              "hora": "10:00"
+            },
+            "faltantes": [
+              "nome",
+              "email",
+              "assunto"
+            ]
+          }
+        },
+        {
+          "texto": "Pessoa Demo B",
+          "resultado": {
+            "resposta": "Qual e-mail fictício (por exemplo demo@example.com)?",
+            "intencao": "agendar_reuniao",
+            "acao": null,
+            "campos": {
+              "data": "2026-11-03",
+              "hora": "10:00",
+              "nome": "Pessoa Demo B"
+            },
+            "faltantes": [
+              "email",
+              "assunto"
+            ]
+          }
+        },
+        {
+          "texto": "b@example.com",
+          "resultado": {
+            "resposta": "Qual é o assunto, em uma linha?",
+            "intencao": "agendar_reuniao",
+            "acao": null,
+            "campos": {
+              "data": "2026-11-03",
+              "hora": "10:00",
+              "nome": "Pessoa Demo B",
+              "email": "b@example.com"
+            },
+            "faltantes": [
+              "assunto"
+            ]
+          }
+        },
+        {
+          "texto": "atendimento digital",
+          "resultado": {
+            "resposta": "Reserva simulada DEMO-R002 registrada para 2026-11-03 às 10:00 (30 minutos). Nenhum e-mail, Meet ou aviso a humano foi enviado.",
+            "intencao": "agendar_reuniao",
+            "acao": "reserva_simulada",
+            "campos": {
+              "data": "2026-11-03",
+              "hora": "10:00",
+              "nome": "Pessoa Demo B",
+              "email": "b@example.com",
+              "assunto": "atendimento digital"
+            },
+            "faltantes": []
+          }
+        }
+      ]
+    },
+    {
+      "nome": "informal",
+      "lead_id": "DEMO-003",
+      "passos": [
+        {
+          "texto": "eae blz qria marca um papo dia 04/11 de tarde, poe no nome de Pessoa Demo C, meu email eh c@example.com",
+          "resultado": {
+            "resposta": "Na agenda simulada estão livres 14:00, 15:00, 16:00; qual horário você prefere?",
+            "intencao": "agendar_reuniao",
+            "acao": null,
+            "campos": {
+              "data": "2026-11-04",
+              "nome": "Pessoa Demo",
+              "email": "c@example.com"
+            },
+            "faltantes": [
+              "hora",
+              "assunto"
+            ]
+          }
+        },
+        {
+          "texto": "16h ta otimo",
+          "resultado": {
+            "resposta": "Qual é o assunto, em uma linha?",
+            "intencao": "agendar_reuniao",
+            "acao": null,
+            "campos": {
+              "data": "2026-11-04",
+              "nome": "Pessoa Demo",
+              "email": "c@example.com",
+              "hora": "16:00"
+            },
+            "faltantes": [
+              "assunto"
+            ]
+          }
+        },
+        {
+          "texto": "atendimento digital",
+          "resultado": {
+            "resposta": "Reserva simulada DEMO-R003 registrada para 2026-11-04 às 16:00 (30 minutos). Nenhum e-mail, Meet ou aviso a humano foi enviado.",
+            "intencao": "agendar_reuniao",
+            "acao": "reserva_simulada",
+            "campos": {
+              "data": "2026-11-04",
+              "hora": "16:00",
+              "nome": "Pessoa Demo",
+              "email": "c@example.com",
+              "assunto": "atendimento digital"
+            },
+            "faltantes": []
+          }
+        }
+      ]
+    }
+  ],
+  "movimento": {
+    "id": "DEMO-001",
+    "nome": "Pessoa Demo A",
+    "pipeline_id": "DEMO-P1",
+    "etapa": "Qualificando",
+    "opt_out": false,
+    "handoff": false,
+    "campos": {
+      "data": "2026-11-03",
+      "hora": "15:00",
+      "nome": "Pessoa Demo",
+      "email": "a@example.com",
+      "assunto": "atendimento"
+    },
+    "fontes": {
+      "data": "03/11",
+      "hora": "15h",
+      "nome": "Sou Pessoa Demo",
+      "email": "a@example.com",
+      "assunto": "sobre atendimento."
+    },
+    "conversa": [
+      {
+        "papel": "pessoa",
+        "texto": "Sou Pessoa Demo A, quero marcar uma reunião dia 03/11 às 15h sobre atendimento. Meu email é a@example.com"
+      },
+      {
+        "papel": "assistente",
+        "texto": "Reserva simulada DEMO-R001 registrada para 2026-11-03 às 15:00 (30 minutos). Nenhum e-mail, Meet ou aviso a humano foi enviado."
+      }
+    ],
+    "agendando": false,
+    "esperado": null,
+    "periodo": null
+  },
+  "status": {
+    "resposta": "DEMO-001: etapa Qualificando, funil Consultoria e Assessoria (registro fictício).",
+    "intencao": "consultar_status",
+    "acao": null,
+    "campos": {
+      "data": "2026-11-03",
+      "hora": "15:00",
+      "nome": "Pessoa Demo",
+      "email": "a@example.com",
+      "assunto": "atendimento"
+    },
+    "faltantes": []
+  },
+  "conflito": {
+    "erro": "Horário ocupado na agenda simulada"
+  },
+  "humano": {
+    "resposta": "Handoff simulado registrado; a automação foi pausada. Nenhum humano foi notificado.",
+    "intencao": "solicitar_humano",
+    "acao": "handoff_simulado",
+    "campos": {
+      "data": "2026-11-03",
+      "hora": "15:00",
+      "nome": "Pessoa Demo",
+      "email": "a@example.com",
+      "assunto": "atendimento"
+    },
+    "faltantes": []
+  },
+  "opt_out": {
+    "resposta": "Contato encerrado nesta demonstração; novas ações automáticas estão bloqueadas.",
+    "intencao": "opt_out",
+    "acao": "opt_out",
+    "campos": {
+      "data": "2026-11-03",
+      "hora": "10:00",
+      "nome": "Pessoa Demo B",
+      "email": "b@example.com",
+      "assunto": "atendimento digital"
+    },
+    "faltantes": []
+  },
+  "estado_final": {
+    "demo": true,
+    "referencia": "2026-11-02",
+    "pipelines": [
+      {
+        "id": "DEMO-P1",
+        "nome": "Consultoria e Assessoria",
+        "etapas": [
+          "Novo contato",
+          "Em triagem",
+          "Qualificando",
+          "Sem resposta (frio)",
+          "Pronto para humano",
+          "Agendado",
+          "Orçamento em avaliação",
+          "Proposta (humana)",
+          "Ganho",
+          "Perdido"
+        ]
+      },
+      {
+        "id": "DEMO-P2",
+        "nome": "Chalés LSF",
+        "etapas": [
+          "Novo contato",
+          "Em triagem",
+          "Qualificando",
+          "Sem resposta (frio)",
+          "Pronto para humano",
+          "Agendado",
+          "Orçamento em avaliação",
+          "Proposta (humana)",
+          "Ganho",
+          "Perdido"
+        ]
+      },
+      {
+        "id": "DEMO-P3",
+        "nome": "Clientes (Pós-venda)",
+        "etapas": [
+          "Cliente novo",
+          "Em andamento",
+          "Ocorrência aberta",
+          "Aguardando cliente",
+          "Entregue / em garantia",
+          "Concluído",
+          "Encerrado"
+        ]
+      }
+    ],
+    "evento": {
+      "slug": "reuniao",
+      "nome": "Reunião",
+      "duracao_minutos": 30,
+      "onde": "Google Meet",
+      "precisa_confirmacao": false
+    },
+    "oportunidades": [
+      {
+        "id": "DEMO-001",
+        "nome": "Pessoa Demo A",
+        "pipeline_id": "DEMO-P1",
+        "etapa": "Pronto para humano",
+        "opt_out": false,
+        "handoff": true,
+        "campos": {
+          "data": "2026-11-03",
+          "hora": "15:00",
+          "nome": "Pessoa Demo",
+          "email": "a@example.com",
+          "assunto": "atendimento"
+        },
+        "fontes": {
+          "data": "03/11",
+          "hora": "15h",
+          "nome": "Sou Pessoa Demo",
+          "email": "a@example.com",
+          "assunto": "sobre atendimento."
+        },
+        "conversa": [
+          {
+            "papel": "pessoa",
+            "texto": "Sou Pessoa Demo A, quero marcar uma reunião dia 03/11 às 15h sobre atendimento. Meu email é a@example.com"
+          },
+          {
+            "papel": "assistente",
+            "texto": "Reserva simulada DEMO-R001 registrada para 2026-11-03 às 15:00 (30 minutos). Nenhum e-mail, Meet ou aviso a humano foi enviado."
+          },
+          {
+            "papel": "pessoa",
+            "texto": "qual o status da minha oportunidade?"
+          },
+          {
+            "papel": "assistente",
+            "texto": "DEMO-001: etapa Qualificando, funil Consultoria e Assessoria (registro fictício)."
+          },
+          {
+            "papel": "pessoa",
+            "texto": "quero falar com um humano"
+          },
+          {
+            "papel": "assistente",
+            "texto": "Handoff simulado registrado; a automação foi pausada. Nenhum humano foi notificado."
+          }
+        ],
+        "agendando": false,
+        "esperado": null,
+        "periodo": null
+      },
+      {
+        "id": "DEMO-002",
+        "nome": "Pessoa Demo B",
+        "pipeline_id": "DEMO-P2",
+        "etapa": "Agendado",
+        "opt_out": true,
+        "handoff": false,
+        "campos": {
+          "data": "2026-11-03",
+          "hora": "10:00",
+          "nome": "Pessoa Demo B",
+          "email": "b@example.com",
+          "assunto": "atendimento digital"
+        },
+        "fontes": {
+          "data": "03/11",
+          "hora": "10h",
+          "nome": "Pessoa Demo B",
+          "email": "b@example.com",
+          "assunto": "atendimento digital"
+        },
+        "conversa": [
+          {
+            "papel": "pessoa",
+            "texto": "Quero agendar uma reunião"
+          },
+          {
+            "papel": "assistente",
+            "texto": "Para qual dia: 03, 04 ou 05/11/2026?"
+          },
+          {
+            "papel": "pessoa",
+            "texto": "03/11"
+          },
+          {
+            "papel": "assistente",
+            "texto": "Na agenda simulada estão livres 09:00, 10:00, 11:00, 16:00; qual horário você prefere?"
+          },
+          {
+            "papel": "pessoa",
+            "texto": "10h"
+          },
+          {
+            "papel": "assistente",
+            "texto": "Em qual nome fictício eu registro?"
+          },
+          {
+            "papel": "pessoa",
+            "texto": "Pessoa Demo B"
+          },
+          {
+            "papel": "assistente",
+            "texto": "Qual e-mail fictício (por exemplo demo@example.com)?"
+          },
+          {
+            "papel": "pessoa",
+            "texto": "b@example.com"
+          },
+          {
+            "papel": "assistente",
+            "texto": "Qual é o assunto, em uma linha?"
+          },
+          {
+            "papel": "pessoa",
+            "texto": "atendimento digital"
+          },
+          {
+            "papel": "assistente",
+            "texto": "Reserva simulada DEMO-R002 registrada para 2026-11-03 às 10:00 (30 minutos). Nenhum e-mail, Meet ou aviso a humano foi enviado."
+          },
+          {
+            "papel": "pessoa",
+            "texto": "não quero mais receber mensagens de vocês"
+          },
+          {
+            "papel": "assistente",
+            "texto": "Contato encerrado nesta demonstração; novas ações automáticas estão bloqueadas."
+          }
+        ],
+        "agendando": false,
+        "esperado": null,
+        "periodo": null
+      },
+      {
+        "id": "DEMO-003",
+        "nome": "Pessoa Demo C",
+        "pipeline_id": "DEMO-P3",
+        "etapa": "Ocorrência aberta",
+        "opt_out": false,
+        "handoff": false,
+        "campos": {
+          "data": "2026-11-04",
+          "hora": "16:00",
+          "nome": "Pessoa Demo",
+          "email": "c@example.com",
+          "assunto": "atendimento digital"
+        },
+        "fontes": {
+          "data": "04/11",
+          "hora": "16h",
+          "nome": "poe no nome de Pessoa Demo",
+          "email": "c@example.com",
+          "assunto": "atendimento digital"
+        },
+        "conversa": [
+          {
+            "papel": "pessoa",
+            "texto": "eae blz qria marca um papo dia 04/11 de tarde, poe no nome de Pessoa Demo C, meu email eh c@example.com"
+          },
+          {
+            "papel": "assistente",
+            "texto": "Na agenda simulada estão livres 14:00, 15:00, 16:00; qual horário você prefere?"
+          },
+          {
+            "papel": "pessoa",
+            "texto": "16h ta otimo"
+          },
+          {
+            "papel": "assistente",
+            "texto": "Qual é o assunto, em uma linha?"
+          },
+          {
+            "papel": "pessoa",
+            "texto": "atendimento digital"
+          },
+          {
+            "papel": "assistente",
+            "texto": "Reserva simulada DEMO-R003 registrada para 2026-11-04 às 16:00 (30 minutos). Nenhum e-mail, Meet ou aviso a humano foi enviado."
+          }
+        ],
+        "agendando": false,
+        "esperado": null,
+        "periodo": null
+      }
+    ],
+    "reservas": [
+      {
+        "data": "2026-11-03",
+        "hora": "15:00",
+        "nome": "Pessoa Demo",
+        "email": "a@example.com",
+        "assunto": "atendimento",
+        "id": "DEMO-R001",
+        "lead_id": "DEMO-001",
+        "simulada": true,
+        "duracao_minutos": 30
+      },
+      {
+        "data": "2026-11-03",
+        "hora": "10:00",
+        "nome": "Pessoa Demo B",
+        "email": "b@example.com",
+        "assunto": "atendimento digital",
+        "id": "DEMO-R002",
+        "lead_id": "DEMO-002",
+        "simulada": true,
+        "duracao_minutos": 30
+      },
+      {
+        "data": "2026-11-04",
+        "hora": "16:00",
+        "nome": "Pessoa Demo",
+        "email": "c@example.com",
+        "assunto": "atendimento digital",
+        "id": "DEMO-R003",
+        "lead_id": "DEMO-003",
+        "simulada": true,
+        "duracao_minutos": 30
+      }
+    ],
+    "eventos": [
+      {
+        "sequencia": 1,
+        "acao": "reserva_simulada",
+        "lead_id": "DEMO-001",
+        "detalhe": {
+          "data": "2026-11-03",
+          "hora": "15:00",
+          "nome": "Pessoa Demo",
+          "email": "a@example.com",
+          "assunto": "atendimento",
+          "id": "DEMO-R001",
+          "lead_id": "DEMO-001",
+          "simulada": true,
+          "duracao_minutos": 30
+        }
+      },
+      {
+        "sequencia": 2,
+        "acao": "mover",
+        "lead_id": "DEMO-001",
+        "detalhe": {
+          "de": "Novo contato",
+          "para": "Agendado"
+        }
+      },
+      {
+        "sequencia": 3,
+        "acao": "reserva_simulada",
+        "lead_id": "DEMO-002",
+        "detalhe": {
+          "data": "2026-11-03",
+          "hora": "10:00",
+          "nome": "Pessoa Demo B",
+          "email": "b@example.com",
+          "assunto": "atendimento digital",
+          "id": "DEMO-R002",
+          "lead_id": "DEMO-002",
+          "simulada": true,
+          "duracao_minutos": 30
+        }
+      },
+      {
+        "sequencia": 4,
+        "acao": "mover",
+        "lead_id": "DEMO-002",
+        "detalhe": {
+          "de": "Qualificando",
+          "para": "Agendado"
+        }
+      },
+      {
+        "sequencia": 5,
+        "acao": "reserva_simulada",
+        "lead_id": "DEMO-003",
+        "detalhe": {
+          "data": "2026-11-04",
+          "hora": "16:00",
+          "nome": "Pessoa Demo",
+          "email": "c@example.com",
+          "assunto": "atendimento digital",
+          "id": "DEMO-R003",
+          "lead_id": "DEMO-003",
+          "simulada": true,
+          "duracao_minutos": 30
+        }
+      },
+      {
+        "sequencia": 6,
+        "acao": "mover",
+        "lead_id": "DEMO-001",
+        "detalhe": {
+          "de": "Agendado",
+          "para": "Qualificando"
+        }
+      },
+      {
+        "sequencia": 7,
+        "acao": "handoff_simulado",
+        "lead_id": "DEMO-001",
+        "detalhe": {
+          "motivo": "pedido_humano"
+        }
+      },
+      {
+        "sequencia": 8,
+        "acao": "mover",
+        "lead_id": "DEMO-001",
+        "detalhe": {
+          "de": "Qualificando",
+          "para": "Pronto para humano"
+        }
+      },
+      {
+        "sequencia": 9,
+        "acao": "opt_out",
+        "lead_id": "DEMO-002",
+        "detalhe": {
+          "simulado": true
+        }
+      }
+    ],
+    "dias_disponiveis": [
+      "2026-11-03",
+      "2026-11-04",
+      "2026-11-05"
+    ]
+  }
+}

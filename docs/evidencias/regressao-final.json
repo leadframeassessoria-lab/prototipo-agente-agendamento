@@ -1,0 +1,17 @@
+{
+  "backend_tests": 27,
+  "documentation_tests": 1,
+  "all_passed": true,
+  "legacy_runner_exit_code": 0,
+  "legacy_protected_files_unchanged": [
+    "src/agente.py",
+    "src/agenda_api.py",
+    "src/dialogo.py",
+    "src/nlu.py",
+    "src/normalizacao.py",
+    "src/portoes.py",
+    "demo_conversa.py",
+    "executar_testes.py",
+    "prompts/sistema.md"
+  ]
+}

@@ -1,0 +1,6 @@
+test_optout_nao_mascara_deteccao_sensivel_nos_dois_caminhos (test_crm_regressoes.RegressoesCRM.test_optout_nao_mascara_deteccao_sensivel_nos_dois_caminhos) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+OK

@@ -1,0 +1,14 @@
+{
+  "stage": "post_corrections",
+  "source": "deleg_f679ef45 — post-correction verification",
+  "passed": true,
+  "tests_run": 48,
+  "tests_passed": 48,
+  "findings_addressed": [
+    {"severity": "P2", "id": "horaimpossivel", "status": "corrigido",
+     "description": "Regex não capturava 'às 15:99' corretamente. Corrigido para reconhecer 'as N:MM' com minutos inválidos.",
+     "evidence": "docs/evidencias/revisao-hora-green.txt"}
+  ],
+  "regression_tests_added": 1,
+  "note": "Todas as correções P2 foram validadas. Testes de regressão passam (48/48)."
+}

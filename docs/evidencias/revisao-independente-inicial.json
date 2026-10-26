@@ -1,0 +1,13 @@
+{
+  "stage": "before_corrections",
+  "source": "deleg_281dd22b — independent read-only review",
+  "passed": false,
+  "tests_passed_before_review": 23,
+  "findings": [
+    {"severity": "P2", "id": "sensivel-optout", "description": "Opt-out priority masked sensitive-text detection in conversation and direct reservation."},
+    {"severity": "P2", "id": "coleta-obsoleta", "description": "Direct reservation left chat collection active and retained stale fields."},
+    {"severity": "P2", "id": "correcao-assunto", "description": "Date correction could be consumed as missing subject and trigger reservation."},
+    {"severity": "P2", "id": "hora-impossivel", "description": "Correction with às 25 retained the previous valid hour."}
+  ],
+  "note": "Historical initial findings, not approval of the final version. Subsequent RED/GREEN evidence and post-correction review are separate."
+}
