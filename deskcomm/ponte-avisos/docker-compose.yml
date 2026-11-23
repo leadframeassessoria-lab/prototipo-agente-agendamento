@@ -1,0 +1,31 @@
+# Ponte de avisos Leadframe — sobe sozinha, sem tocar no Deskcomm nem no Hermes.
+#   docker compose up -d --build     sobe (ou atualiza depois de mudar o código)
+#   docker compose logs -f           acompanha
+#   docker compose ps                "healthy" = ciclos bons recentes
+#   docker compose down              para (o estado fica no volume)
+services:
+  ponte-avisos:
+    build: .
+    image: leadframe/ponte-avisos:local
+    container_name: leadframe-ponte-avisos
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ponte-avisos-dados:/data
+      - ./certs:/app/certs:ro
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    mem_limit: 128m
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "3"
+
+volumes:
+  ponte-avisos-dados:

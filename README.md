@@ -1,4 +1,16 @@
-## Leadframe CRM — demonstração local para apresentação
+# Assistente de atendimento contextualizado por oportunidades de CRM
+
+Projeto da disciplina LLM Projects — Gabryel Olavo Souza Leite e Pedro Augusto Ribeiro Gonçales.
+
+| Etapa | Onde está |
+|---|---|
+| **Entrega final:** atendimento inteligente da Leadframe funcionando no Deskcomm CRM, com WhatsApp oficial, Google Agenda/Meet e LLM | **[`deskcomm/`](deskcomm/README.md)** |
+| Etapa 2: demonstração local do CRM (dados fictícios) | esta página, abaixo |
+| Etapa 1: protótipo de agendamento por linguagem natural | [`docs/legado-agendamento.md`](docs/legado-agendamento.md) |
+
+---
+
+## Etapa 2 — Leadframe CRM: demonstração local
 
 Evolução do protótipo acadêmico de agendamento: o foco passa a ser **o registro da oportunidade no CRM**, sua etapa, a conversa e a trilha de ações. O agendamento é uma operação demonstrada dentro desse contexto, não o produto inteiro.
 
@@ -97,7 +109,7 @@ Não há chamada a LLM na demonstração. O extrator é determinístico. [`promp
 
 ## Os cinco entregáveis do briefing
 
-- **1. Repositório e execução:** este README, `demo_crm.py`, `web/`, `src/crm_demo.py` e o snapshot sanitizado. A mudança foi preparada em branch local; o link remoto não passa a conter estes arquivos sem publicação autorizada.
+- **1. Repositório e execução:** este README, `demo_crm.py`, `web/`, `src/crm_demo.py` e o snapshot sanitizado.
 - **2. Intenção e prompt:** arquitetura acima e [`prompts/crm-demo.md`](prompts/crm-demo.md), com a distinção entre contrato documentado e runtime sem LLM.
 - **3. Demonstração funcionando:** interface interativa, `--roteiro` e [`docs/roteiro-apresentacao.md`](docs/roteiro-apresentacao.md).
 - **4. Resultados dos testes:** cenários automatizados em `tests/`, transcritos e relatórios reais em `docs/evidencias/`. O relatório de verificação identifica o que foi efetivamente executado.
@@ -139,4 +151,4 @@ O README original foi arquivado em [`docs/legado-agendamento.md`](docs/legado-ag
 
 ## Publicação
 
-Branch de trabalho: `feat/proex-crm-atual`. Nenhum push, PR, merge, deploy ou alteração de produção é necessário para testar localmente. Publicar a atualização no GitHub é uma etapa separada, dependente de autorização humana.
+Publicado em `main` em 23/11/2026, com autorização dos integrantes. O ramo `feat/proex-crm-atual` guarda o mesmo conteúdo. Nada disso é necessário para testar localmente: a demonstração roda sem push, deploy ou alteração de produção.

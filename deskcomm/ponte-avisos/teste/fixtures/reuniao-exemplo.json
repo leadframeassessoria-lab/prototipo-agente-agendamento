@@ -1,0 +1,14 @@
+[
+  {
+    "reuniao_id": "5e4d3c2b-1a09-4f8e-9d7c-6b5a4f3e2d1c",
+    "conversation_id": "3f2b8c1e-5a4d-4e7b-9c21-8d6f0a1b2c3d",
+    "criado_em": "2026-10-05T21:20:00.000Z",
+    "inicia_em": "2026-10-07T12:30:00.000Z",
+    "fuso": "America/Sao_Paulo",
+    "titulo": "Reunião sobre chalé em Cuiabá",
+    "notas": "Conversa de 30 minutos por Google Meet para avaliar o projeto de chalé em Cuiabá, MT. Já tem terreno, ainda sem projeto. E-mail informado: cliente.teste@gmai.com.",
+    "situacao": "confirmed",
+    "contato_nome": "Maria Souza",
+    "contato_telefone": "+5567999990000"
+  }
+]

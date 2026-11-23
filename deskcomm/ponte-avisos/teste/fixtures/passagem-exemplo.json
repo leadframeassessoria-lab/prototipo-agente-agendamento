@@ -1,0 +1,28 @@
+[
+  {
+    "passagem_id": "9b1d3c52-6a1f-4e0b-8d2a-3f4e5a6b7c8d",
+    "conversation_id": "3f2b8c1e-5a4d-4e7b-9c21-8d6f0a1b2c3d",
+    "criado_em": "2026-10-05T21:10:00.000Z",
+    "origem": "pedido_explicito",
+    "motivo_codigo": "requested_human",
+    "o_que_quer": "Entender como funciona a gestão de redes sociais para a loja dela",
+    "resumo": "Por que a IA passou: O cliente pediu para falar com uma pessoa\nO que o cliente quer (segundo a IA — confira): Entender como funciona a gestão de redes sociais para a loja dela\nO que a IA já tentou:\n- Explicou que a Leadframe faz gestão de redes sociais\n- Perguntou qual o segmento da loja\nÚltimas mensagens do cliente (palavras dele): \"Tenho uma loja de roupas\"; \"Quero falar com um atendente, por favor\"\nContexto acumulado (segundo a IA — confira):\nCliente tem uma loja de roupas em Campo Grande e quer aumentar as vendas pelo Instagram.\nPróxima ação: retomar com um especialista.",
+    "ultimas_palavras": "Tenho uma loja de roupas\nQuero falar com um atendente, por favor",
+    "reconhecido_em": null,
+    "contato_nome": "Maria Souza",
+    "contato_telefone": "+5567999990000"
+  },
+  {
+    "passagem_id": "1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+    "conversation_id": "7c6b5a49-3827-4615-a4b3-c2d1e0f9a8b7",
+    "criado_em": "2026-10-05T21:15:00.000Z",
+    "origem": "sentimento",
+    "motivo_codigo": "low_sentiment",
+    "o_que_quer": null,
+    "resumo": "Sem resumo acumulado ainda (conversa recente) — abra a conversa no CRM para o contexto completo.",
+    "ultimas_palavras": "Já mandei 3 mensagens e ninguém responde direito, olha meu CPF 123.456.789-00 e veja no site www.golpe-exemplo.com",
+    "reconhecido_em": null,
+    "contato_nome": null,
+    "contato_telefone": null
+  }
+]

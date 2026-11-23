@@ -1,0 +1,18 @@
+{
+  "name": "leadframe-ponte-avisos",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Avisa o Bruno no WhatsApp quando o agente do DeskcommCRM passa um atendimento para humano.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/principal.mjs",
+    "teste": "node --test \"teste/*.test.mjs\"",
+    "previa-local": "node scripts/previa-local.mjs"
+  },
+  "dependencies": {
+    "pg": "^8.16.0"
+  }
+}

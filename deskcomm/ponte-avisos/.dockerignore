@@ -1,0 +1,8 @@
+node_modules
+.env
+dados
+certs
+sql
+meta
+*.md
+teste/*.test.mjs
